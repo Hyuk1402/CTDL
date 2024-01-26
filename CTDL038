@@ -1,0 +1,35 @@
+#CTDL038
+#include<bits/stdc++.h>
+using namespace std ;
+int tomin(int n){
+string tmp = to_string(n);
+string ans = "";
+for(char c:tmp){
+    if(c == '5'){
+        ans += '3';
+    }
+    else  ans += c;
+}
+return stoi(ans);
+}
+int tomax(int n){
+string tmp = to_string(n);
+string ans = "";
+for(char c:tmp){
+    if(c == '3'){
+        ans += '5';
+    }
+    else  ans += c;
+}
+return stoi(ans);
+}
+int main(){
+    int t;
+    cin >>t;
+    while(t--){
+        int a,b;
+        cin >>a >>b;
+        cout << tomin(a)+ tomin(b)<< " "<< tomax(a)+ tomax(b)<< endl;
+    }
+    return 0;
+}
